@@ -1,6 +1,6 @@
 # Nachiketa's Voice Assistant 🤖
 
-A voice-enabled web application that allows you to have natural conversations with an AI assistant. Built with Flask, HuggingFace's DeepSeek model, and modern web technologies.
+A voice-enabled web application that allows you to have natural conversations with an AI assistant. Built with Flask, Mistral AI's model, and modern web technologies.
 
 ## Features ✨
 
@@ -10,13 +10,13 @@ A voice-enabled web application that allows you to have natural conversations wi
 - ☕ Chai + Code inspired theme
 - 📱 Responsive design
 - 📄 Export chat history to PDF
-- 🤖 Powered by HuggingFace's DeepSeek model
+- 🤖 Powered by Mistral AI's 7B Instruct model
 
 ## Tech Stack 🛠️
 
 - **Backend**: Python Flask
 - **Frontend**: HTML5, CSS3, JavaScript
-- **AI Model**: HuggingFace DeepSeek
+- **AI Model**: Mistral AI's 7B Instruct v0.2
 - **Voice**: Web Speech API
 - **Styling**: Custom CSS with modern animations
 
@@ -24,7 +24,7 @@ A voice-enabled web application that allows you to have natural conversations wi
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/nachiketa-voicebot.git
+git clone https://github.com/Nachiketa-Singamsetty/nachiketa-voicebot.git
 cd nachiketa-voicebot
 ```
 
@@ -50,13 +50,14 @@ HUGGINGFACE_API_KEY=your_api_key_here
 ```
 
 5. Configure the AI model:
-   - The application uses the DeepSeek model from HuggingFace
+   - The application uses Mistral AI's 7B Instruct model
    - The model configuration is in `app.py`
    - You can modify the model parameters in the `generate_response` function:
-     - `max_length`: Maximum length of generated response
+     - `max_tokens`: Maximum length of generated response (default: 150)
      - `temperature`: Controls randomness (higher = more random)
      - `top_p`: Controls diversity via nucleus sampling
-     - `repetition_penalty`: Prevents repetitive text
+     - `frequency_penalty`: Prevents repetitive text
+     - `presence_penalty`: Encourages diverse topics
 
 6. Run the application:
 ```bash
