@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: nachiketa-voicebot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: HUGGINGFACE_API_KEY
+        sync: false
+    healthCheckPath: /
+    autoDeploy: true 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nachiketa's Voice Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-code code-icon"></i>
+                    <span class="plus">+</span>
+                    <i class="fas fa-mug-hot chai-icon"></i>
+                </div>
+            </div>
+            <h1>Nachiketa's Voice Assistant</h1>
+            <p class="subtitle">Where code meets chai - Ask me anything!</p>
+        </header>
+
+        <main>
+            <div class="chat-container">
+                <div id="chat-messages"></div>
+            </div>
+
+            <div class="controls">
+                <button id="micButton" class="mic-button">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <div id="status" class="status">Click the mic to start speaking</div>
+                <button id="exportButton" class="export-button" title="Export chat to PDF">
+                    <i class="fas fa-file-pdf"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Template for user message -->
+    <template id="user-message-template">
+        <div class="message user">
+            <div class="avatar">
+                <i class="fas fa-terminal"></i>
+            </div>
+            <div class="message-content">
+                <div class="message-text"></div>
+                <div class="message-time"></div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Template for bot message -->
+    <template id="bot-message-template">
+        <div class="message bot">
+            <div class="avatar">
+                <i class="fas fa-mug-hot"></i>
+            </div>
+            <div class="message-content">
+                <div class="message-text"></div>
+                <div class="message-time"></div>
+            </div>
+        </div>
+    </template>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
