@@ -3,68 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nachiketa's Voice Assistant</title>
+    <title>Nachiketa Singamsetty | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo-container">
-                <div class="logo">
-                    <i class="fas fa-code code-icon"></i>
-                    <span class="plus">+</span>
-                    <i class="fas fa-mug-hot chai-icon"></i>
+    <nav class="navbar" aria-label="Main Navigation">
+        <div class="nav-logo" aria-label="Home">
+            <i class="fas fa-code"></i>
+            <span>Nachiketa S.</span>
+            <i class="fas fa-mug-hot"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#voice-assistant">Voice AI</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#techstack">Tech Stack</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <button id="backToTop" title="Back to Top" aria-label="Back to Top">&#8679;</button>
+    <button id="themeSwitcher" title="Switch Theme" aria-label="Switch Theme"><i class="fas fa-adjust"></i></button>
+    <main class="container">
+        <!-- Voice Assistant Hero Section -->
+        <section id="voice-assistant" class="section voice-assistant-section" aria-labelledby="voice-assistant-title">
+            <header class="section-header">
+                <div class="logo-container">
+                    <div class="logo">
+                        <i class="fas fa-code code-icon"></i>
+                        <span class="plus">+</span>
+                        <i class="fas fa-mug-hot chai-icon"></i>
+                    </div>
+                </div>
+                <h1 id="voice-assistant-title">Nachiketa's AI Voice Assistant</h1>
+                <p class="subtitle">Interactive AI • Real-time Responses • Voice Enabled</p>
+                <div class="voice-tagline">
+                    <i class="fas fa-microphone-alt"></i>
+                    <span>Click, Speak, Experience the Future</span>
+                </div>
+            </header>
+            <div class="voice-main-container">
+                <div class="chat-container" aria-live="polite">
+                    <div class="chat-header">
+                        <div class="chat-status-indicator">
+                            <div class="pulse-dot"></div>
+                            <span>AI Ready</span>
+                        </div>
+                        <button id="exportButton" class="export-button" title="Export chat to PDF" aria-label="Export chat to PDF">
+                            <i class="fas fa-file-pdf"></i>
+                        </button>
+                    </div>
+                    <div id="chat-messages"></div>
+                </div>
+                <div class="controls">
+                    <div class="mic-container">
+                        <button id="micButton" class="mic-button" aria-label="Start voice input">
+                            <i class="fas fa-microphone"></i>
+                            <div class="mic-ripple"></div>
+                        </button>
+                        <div class="voice-visualizer" aria-hidden="true">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                    <div id="status" class="status" aria-live="polite">Click the mic to start speaking</div>
                 </div>
             </div>
-            <h1>Nachiketa's Voice Assistant</h1>
-            <p class="subtitle">Where code meets chai - Ask me anything!</p>
-        </header>
-
-        <main>
-            <div class="chat-container">
-                <div id="chat-messages"></div>
+        </section>
+        <!-- About Section -->
+        <section id="about" class="section about-section" aria-labelledby="about-title">
+            <header class="section-header">
+                <h2 id="about-title" class="animated-header"><i class="fas fa-user-code"></i> About Me</h2>
+                <div class="header-underline"></div>
+            </header>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Education</h3>
+                    <p>B.Tech in Computer Science Engineering (AI/ML)<br>Bennett University (2022–2026)<br><strong>CGPA: 8.89</strong></p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Core Skills</h3>
+                    <p>Machine Learning • Deep Learning • NLP<br>Text Preprocessing • Computer Vision<br>Problem Solving • Creative Coding</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon"><i class="fas fa-coffee"></i></div>
+                    <h3>Philosophy</h3>
+                    <p>Persistent brain meets creative chaos.<br>I build, break, and debug things that matter.<br>Always up for a challenge and a cup of chai!</p>
+                </div>
             </div>
-
-            <div class="controls">
-                <button id="micButton" class="mic-button">
-                    <i class="fas fa-microphone"></i>
-                </button>
-                <div id="status" class="status">Click the mic to start speaking</div>
-                <button id="exportButton" class="export-button" title="Export chat to PDF">
-                    <i class="fas fa-file-pdf"></i>
-                </button>
+            <div class="bio-section">
+                <div class="bio-text">
+                    <p>I'm a CSE undergrad passionate about AI, NLP, and building tools that solve real problems. I love creative coding, collaborating, and learning by doing. My journey combines technical expertise with creative flair, always seeking innovative solutions to complex challenges.</p>
+                </div>
             </div>
-        </main>
-    </div>
-
-    <!-- Template for user message -->
+        </section>
+        <!-- Tech Stack Section -->
+        <section id="techstack" class="section techstack-section" aria-labelledby="techstack-title">
+            <header class="section-header">
+                <h2 id="techstack-title" class="animated-header"><i class="fas fa-tools"></i> Tech Arsenal</h2>
+                <div class="header-underline"></div>
+            </header>
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3><i class="fas fa-code"></i> Languages</h3>
+                    <div class="tech-items">
+                        <div class="tech-item"><i class="fab fa-python"></i><span>Python</span></div>
+                        <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/C%2B%2B_logo.png" alt="C++"><span>C++</span></div>
+                        <div class="tech-item"><i class="fab fa-java"></i><span>Java</span></div>
+                        <div class="tech-item"><i class="fas fa-database"></i><span>MySQL</span></div>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3><i class="fas fa-robot"></i> AI/ML</h3>
+                    <div class="tech-items">
+                        <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg" alt="TensorFlow"><span>TensorFlow</span></div>
+                        <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" alt="PyTorch"><span>PyTorch</span></div>
+                        <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Scikit_learn_logo_small.svg" alt="Scikit-learn"><span>Scikit-Learn</span></div>
+                        <div class="tech-item"><i class="fas fa-chart-line"></i><span>Keras</span></div>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3><i class="fas fa-chart-bar"></i> Data Science</h3>
+                    <div class="tech-items">
+                        <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" alt="NumPy"><span>NumPy</span></div>
+                        <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Logo_Pandas.svg" alt="Pandas"><span>Pandas</span></div>
+                        <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" alt="Matplotlib"><span>Matplotlib</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section" aria-labelledby="projects-title">
+            <header class="section-header">
+                <h2 id="projects-title" class="animated-header"><i class="fas fa-lightbulb"></i> Projects</h2>
+                <div class="header-underline"></div>
+            </header>
+            <div class="carousel-container" aria-label="Featured Projects Carousel">
+                <button class="carousel-btn prev" aria-label="Previous Project">&#10094;</button>
+                <div class="carousel-track">
+                    <div class="carousel-item active">
+                        <img src="https://placehold.co/400x200?text=Game+Code+Iterator" alt="Game Code Iterator">
+                        <div class="carousel-caption">
+                            <h3>Game Code Iterator</h3>
+                            <p>LLM-powered code refinement for game devs. <a href="#">Learn more</a></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://placehold.co/400x200?text=Mental+Health+Chatbot" alt="Mental Health Chatbot">
+                        <div class="carousel-caption">
+                            <h3>Mental Health Chatbot</h3>
+                            <p>AI chatbot for mental health support. <a href="#">Learn more</a></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://placehold.co/400x200?text=Ishare+Smart+Cane" alt="Ishare Smart Cane">
+                        <div class="carousel-caption">
+                            <h3>Ishare Smart Cane</h3>
+                            <p>YOLO-powered smart cane for the visually impaired. <a href="#">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" aria-label="Next Project">&#10095;</button>
+            </div>
+            <div class="project-list">
+                <!-- ... existing project cards ... -->
+            </div>
+        </section>
+        <!-- Fun Facts Section -->
+        <section id="funfacts" class="section funfacts-section" aria-labelledby="funfacts-title">
+            <header class="section-header">
+                <h2 id="funfacts-title" class="animated-header"><i class="fas fa-mug-hot"></i> Fun Facts</h2>
+                <div class="header-underline"></div>
+            </header>
+            <ul class="funfacts-list">
+                <li>Co-authored a poetry anthology.</li>
+                <li>Directed & edited 5 short films and documentaries.</li>
+                <li>Once debugged code for 12 hours straight (with chai breaks!).</li>
+                <li>Love hackathons, memes, and late-night coding jams.</li>
+            </ul>
+        </section>
+        <!-- Resume Section -->
+        <section id="resume" class="section resume-section" aria-labelledby="resume-title">
+            <header class="section-header">
+                <h2 id="resume-title" class="animated-header"><i class="fas fa-file-alt"></i> Resume</h2>
+                <div class="header-underline"></div>
+            </header>
+            <a href="https://drive.google.com/file/d/1FtTRmefGrF-g31Vza-dnO1V7f_OZnYfq/view?usp=sharing" target="_blank" class="resume-download"><i class="fas fa-download"></i> Download Resume (PDF)</a>
+            <div class="resume-summary">
+                <h3>Education</h3>
+                <p>B.Tech – Computer Science Engineering (AI/ML), Bennett University, 2022–2026, CGPA: 8.89</p>
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>Languages: Python, MySQL, C++, Java</li>
+                    <li>Frameworks/Libraries: PyTorch, TensorFlow, Keras, Scikit-Learn, Pandas, NumPy, Matplotlib</li>
+                    <li>Core: Machine Learning, Deep Learning, NLP, Text Preprocessing</li>
+                    <li>Tools: Git, GitHub, VSCode, Android Studio</li>
+                </ul>
+                <h3>Soft Skills</h3>
+                <ul>
+                    <li>Networking, Creative Flair, Persistence, Receptiveness, Aesthetic Sensibility, Analytical Thinking</li>
+                </ul>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+            <header class="section-header">
+                <h2 id="contact-title" class="animated-header"><i class="fas fa-envelope"></i> Contact</h2>
+                <div class="header-underline"></div>
+            </header>
+            <ul class="contact-list">
+                <li><i class="fas fa-envelope"></i> nachiketa3003@gmail.com</li>
+                <li><i class="fas fa-phone"></i> +91-7981756153</li>
+                <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/nachiketa-singamsetty" target="_blank">nachiketa-singamsetty</a></li>
+                <li><i class="fab fa-github"></i> <a href="https://github.com/Nachiketa-Singamsetty" target="_blank">Nachiketa-Singamsetty</a></li>
+            </ul>
+            <form class="contact-form" method="POST" action="/contact">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="co-curricular">
+                <h3>Co-curricular Activities</h3>
+                <ul>
+                    <li>Head, Internship Outreach, Bennovate 3.0 | Tech Team, Spark E-Cell</li>
+                    <li>Co-authored & Published a Poetry Anthology</li>
+                    <li>Directed & Edited 5 short films and documentaries</li>
+                    <li>Secured 4th place, SPIN THE CODE – GFG</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <!-- Chat message templates for JS -->
     <template id="user-message-template">
         <div class="message user">
-            <div class="avatar">
-                <i class="fas fa-terminal"></i>
-            </div>
+            <div class="avatar"><i class="fas fa-terminal"></i></div>
             <div class="message-content">
                 <div class="message-text"></div>
                 <div class="message-time"></div>
             </div>
         </div>
     </template>
-
-    <!-- Template for bot message -->
     <template id="bot-message-template">
         <div class="message bot">
-            <div class="avatar">
-                <i class="fas fa-mug-hot"></i>
-            </div>
+            <div class="avatar"><i class="fas fa-mug-hot"></i></div>
             <div class="message-content">
                 <div class="message-text"></div>
                 <div class="message-time"></div>
             </div>
         </div>
     </template>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>

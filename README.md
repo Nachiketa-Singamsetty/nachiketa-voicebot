@@ -2,6 +2,10 @@
 
 A voice-enabled web application that uses AI to chat with users in a natural, conversational way. The bot is designed to mimic my personality as a CSE student from Bennett University, with a focus on AI, coding, and technology.
 
+## 🚀 Live Demo
+
+Check out the deployed app here: [nachiketa-voicebot.onrender.com](https://nachiketa-voicebot.onrender.com)
+
 ## Features ✨
 
 - 🎤 Voice input and output

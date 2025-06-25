@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_from_directory
 from huggingface_hub import InferenceClient
 import os
 from dotenv import load_dotenv
@@ -91,6 +91,10 @@ def ask():
         
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+@app.route('/static/<path:filename>')
+def static_files(filename):
+    return send_from_directory('static', filename)
 
 if __name__ == '__main__':
     app.run(debug=True)
